@@ -4,7 +4,7 @@ use rand::Rng;
 
 fn main()
 {
-    const MATRIX_SIZE: usize = 2;
+    const MATRIX_SIZE: usize = 4;
     let mut isEven = true;
     let mut rng = rand::thread_rng();
 
@@ -17,8 +17,6 @@ fn main()
         }
         println!("");
     }
-    println!("");
-    
 
     for y in 0..MATRIX_SIZE{
         if (numbers[0][0] < numbers[y][0]){
@@ -42,13 +40,6 @@ fn main()
     if (!isEven){
         result *= (-1.0);
     }
-    for y in 0..MATRIX_SIZE{
-        for x in 0..MATRIX_SIZE{
-            print!("{} ",  numbers[y][x]);
-        }
-        println!("");
-    }
-    println!("\nDeterminant: {}", result);
     let res = result;
     if (res.floor() + 0.5 < result){
         println!("\nDeterminant: {}", res.ceil());
